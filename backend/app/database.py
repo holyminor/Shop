@@ -11,6 +11,7 @@ engine = create_engine(
 SessionLocal = sessionmaker(autocommit=False, autoFlush=False, bind=engine)
 Base = declarative_base()
 
+
 def get_db():
     db = SessionLocal()
     try:
@@ -18,6 +19,6 @@ def get_db():
     finally:
         db.close()
 
-def ini_db():
-    Base.metadata.create_all(bind=engine)
 
+def init_db():
+    Base.metadata.create_all(bind=engine)
