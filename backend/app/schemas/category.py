@@ -1,18 +1,18 @@
 from pydantic import BaseModel, Field
 
 
-class categoryBase(BaseModel):
+class CategoryBase(BaseModel):
     name: str = Field(..., min_length=5, max_length=100,
                       description="Category name")
     slug: str = Field(..., min_length=5, max_length=100,
                       description="URL-friendly name")
 
 
-class CategoryCreate(categoryBase):
+class CategoryCreate(CategoryBase):
     pass
 
 
-class CategoryResponce(categoryBase):
+class CategoryResponce(CategoryBase):
     id: int = Field(..., description="Unique category ID")
 
     class Config:
