@@ -12,7 +12,7 @@ class CategoryCreate(CategoryBase):
     pass
 
 
-class CategoryResponce(CategoryBase):
+class CategoryResponse(CategoryBase):
     id: int = Field(..., description="Unique category ID")
 
     class Config:
